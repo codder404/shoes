@@ -114,7 +114,7 @@ section {
   line-height: 1.2;
 }
 
-.featured__details {
+.featured__item .featured__details {
   opacity: 0;
   transition: opacity 250ms linear;
 }
