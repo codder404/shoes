@@ -22,10 +22,30 @@ p {
   margin: 0;
 }
 
+section {
+  padding: 7em 0;
+}
+
 .container {
   width: 85%;
   max-width: 65em;
   margin: 0 auto;
+}
+
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+
+.split>* {
+  flex-basis: 30%;
+  min-width: 15em;
+}
+
+.spacing>*+* {
+  margin-top: var(--spacer, 2rem);
 }
 
 .btn {
@@ -45,4 +65,83 @@ p {
 .btn:focus {
   transform: scale(1.1);
   opacity: .9;
+}
+
+.main-title {
+  font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+  line-height: 1;
+  color: #17353d;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.hero {
+  background: #222;
+  color: #fff;
+  padding: 15em 0;
+  text-align: center;
+}
+
+@supports (background-blend-mode: multiply) {
+  .hero {
+    background: url('../img/shoe-3.png'),
+      radial-gradient(#444, #111);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+  }
+}
+
+.featured {
+  background: #eee;
+}
+
+.featured__item {
+  display: block;
+  position: relative;
+  transform: scale(.85);
+  transition: transform 250ms ease-in-out;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.featured__details {
+  opacity: 0;
+  transition: opacity 250ms linear;
+}
+
+.featured__details .price {
+  display: block;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.featured__item:hover,
+.featured__item:focus {
+  transform: scale(1);
+}
+
+.featured__item:hover .featured__details,
+.featured__item:focus .featured__details {
+  opacity: 1;
+}
+
+.featured__item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 100% 100% 0 0;
+  border-radius: 50%;
+  background: #2193b0;
+  z-index: -1;
 }
