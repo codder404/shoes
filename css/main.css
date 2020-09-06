@@ -56,7 +56,7 @@ section {
   text-transform: uppercase;
   font-size: 1.125rem;
   padding: .5em 1.25em;
-  background: var(--accent, blue);
+  background: var(--color-accent, blue);
   border-radius: .25em;
   transition: transform 250ms ease-in-out, opacity 250ms linear;
 }
@@ -145,4 +145,72 @@ section {
   border-radius: 50%;
   background: #2193b0;
   z-index: -1;
+}
+
+.product {
+  background: radial-gradient(var(--color-inner, limegreen), var(--color-outer, purple));
+  padding: 3em;
+  border-radius: 1em;
+  margin-bottom: 5em;
+  text-align: center;
+}
+
+.product .product__title {
+  font-size: clamp(3rem, calc(5vw + 1rem), 5.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 .2em rgba(#000, .2);
+}
+
+.product .product__img {
+  margin: -5em 0 0 0;
+}
+
+@media (min-width: 45em) {
+  .product {
+    text-align: left;
+    margin-bottom: 9em;
+  }
+
+  .product__title {
+    margin: 0;
+  }
+
+  .product__img {
+    float: right;
+    width: 65%;
+    shape-outside: url('../img/shoe-1.png');
+    shape-margin: 1em;
+    margin: 0 -5em 0 0;
+  }
+
+  .shoe-left .product__img {
+    float: left;
+    shape-outside: url('../img/shoe-2.png');
+    margin: 0 0 0 -5em;
+    shape-margin: 2em;
+  }
+}
+
+.hero {
+  --color-accent: #faa700;
+}
+
+.shoe-red {
+  --color-inner: #faa700;
+  --color-outer: #e48d00;
+  --color-accent: #a1173c;
+}
+
+.shoe-blue {
+  --color-inner: #fce4b3;
+  --color-outer: #eac886;
+  --color-accent: #2f4858;
+}
+
+.shoe-black {
+  --color-inner: #6dd5ed;
+  --color-outer: #2193b0;
+  --color-accent: #008951;
 }
